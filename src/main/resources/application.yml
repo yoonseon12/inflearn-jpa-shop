@@ -2,7 +2,7 @@ spring:
   config.activate.on-profile: default
   
   datasource:
-    url: jdbc:h2:tcp://localhost/~/jpaShop2;
+    url: jdbc:h2:tcp://localhost/~/jpaShop;
     username: sa
     password: 
     driver-class-name: org.h2.Driver
