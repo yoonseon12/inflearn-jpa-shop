@@ -13,6 +13,7 @@ import jpaBook.jpaShop.domain.item.Item;
 import jpaBook.jpaShop.repository.ItemRepository;
 import jpaBook.jpaShop.repository.MemberRepository;
 import jpaBook.jpaShop.repository.OrderRepository;
+import jpaBook.jpaShop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -23,7 +24,7 @@ public class OrderService {
 	private final OrderRepository orderRepository;
 	private final MemberRepository memberRepository;
 	private final ItemRepository itemRepository;
-	
+		
 	/**
 	 * 주문
 	 */
@@ -62,8 +63,8 @@ public class OrderService {
 	}
 	
 	// 검색
-/*	public List<Order> findOrders(OrderSearch orderSearch) {
-		return orderRepository.findAll(orderSearch);
+	public List<Order> findOrders(OrderSearch orderSearch) {
+		return orderRepository.findAllByCriteria(orderSearch);
 	}
-*/
+
 }
