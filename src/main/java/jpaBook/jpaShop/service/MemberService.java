@@ -26,7 +26,7 @@ public class MemberService {
 	
 	// 중복 회원 검증
 	private void validateDuplidateMember(Member member) {
-		List<Member> findMembers = memberRepository.findByName(member.getName()); // Alt + Shift + L
+		List<Member> findMembers = memberRepository.findByName(member.getName());
 		if (!findMembers.isEmpty()) {
 			throw new IllegalStateException("중복 회원 존재");
 		}
@@ -42,4 +42,9 @@ public class MemberService {
 		return memberRepository.findOne(memberId);
 	}
 
+	@Transactional
+	public void update(Long id, String name) {
+		Member member= memberRepository.findOne(id);
+		member.setName(name);
+	}
 }
